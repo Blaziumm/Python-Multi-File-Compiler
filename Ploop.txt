@@ -1,0 +1,23 @@
+def PController(pDistance, pHeading, pVelocity, kp):
+    LeftMotor.set_position(0,DEGREES)    
+    RightMotor.set_position(0,DEGREES)
+    if pVelocity > 0:
+        while LeftMotor.position(DEGREES) < pDistance:
+            error =pH - brain_inertial.heading()
+            output = error * kp
+            LeftMotor.set_velocity(pVelocity - output)
+            RightMotor.set_velocity(pVelocity + output)
+            LeftMotor.spin(FORWARD)
+            RightMotor.spin(FORWARD)
+
+    else:
+        while LeftMotor.position(DEGREES) > pDistance:
+            error =pH - brain_inertial.heading()
+            output = error * kp
+            LeftMotor.set_velocity(pVelocity - output)
+            RightMotor.set_velocity(pVelocity + output)
+            LeftMotor.spin(FORWARD)
+            RightMotor.spin(FORWARD)
+
+    LeftMotor.stop()
+    RightMotor.stop()

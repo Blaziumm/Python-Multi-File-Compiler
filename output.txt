@@ -1,0 +1,50 @@
+#File Generated With Python Multi File Compiler! 
+#Start of TurnController.txt
+
+def PController(pDistance, pHeading, pVelocity, kp):
+    LeftMotor.set_position(0,DEGREES)    
+    RightMotor.set_position(0,DEGREES)
+    if pVelocity > 0:
+        while LeftMotor.position(DEGREES) < pDistance:
+            error =pH - brain_inertial.heading()
+            output = error * kp
+            LeftMotor.set_velocity(pVelocity - output)
+            RightMotor.set_velocity(pVelocity + output)
+            LeftMotor.spin(FORWARD)
+            RightMotor.spin(FORWARD)
+
+    else:
+        while LeftMotor.position(DEGREES) > pDistance:
+            error =pH - brain_inertial.heading()
+            output = error * kp
+            LeftMotor.set_velocity(pVelocity - output)
+            RightMotor.set_velocity(pVelocity + output)
+            LeftMotor.spin(FORWARD)
+            RightMotor.spin(FORWARD)
+
+    LeftMotor.stop()
+    RightMotor.stop()
+
+#End of TurnController.txt
+
+#Start of Ploop.txt
+
+def TurnController(tcHeading, tcVelocity, tcMomentum)
+    if tcHeading > brain_inertial.heading():
+        while tcHeading - tcMomentum > brain_inertial:
+            LeftMotor.set_velocity(tcVelocity)
+            RightMotor.set_velocity(tcVelocity)
+            LeftMotor.spin(REVERSE)
+            RightMotor.spin(FORWARD)
+    
+    else:
+        while tcHeading + tcMomentum < brain_inertial:
+            LeftMotor.set_velocity(tcVelocity)
+            RightMotor.set_velocity(tcVelocity)
+            LeftMotor.spin(FORWARD)
+            RightMotor.spin(REVERSE)
+
+    LeftMotor.stop()
+    RightMotor.stop()
+
+#End of Ploop.txt

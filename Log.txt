@@ -1,0 +1,24 @@
+Start of Log
+
+Files Combined:
+Ploop.txt
+TurnController.txt
+
+Files Skipped:
+poetry.lock
+.breakpoints
+pyproject.toml
+replit.nix
+.replit
+NonReplitVersion.py
+BasicVersion.py
+MoreFeatures.py
+Log.txt
+output.txt
+main.py
+
+Showing Where Files Ends and Starts
+
+Not Using a Custom Path
+
+Scanning for Files
